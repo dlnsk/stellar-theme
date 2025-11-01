@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "../libs/breakpoints";
+@use "../libs/color-elem";
 @use "../libs/functions";
 @use "../libs/vendor";
 
@@ -18,7 +19,7 @@
 			'border-top-right-radius #{functions.duration(transition)} ease',
 			'padding #{functions.duration(transition)} ease',
 		));
-		@include color-typography(invert);
+		@include color-elem.color-typography(invert);
 		position: absolute;
 		width: functions.size(inner);
 		max-width: calc(100% - #{functions.size(element-margin) * 2});
