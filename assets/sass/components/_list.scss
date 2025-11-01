@@ -1,3 +1,5 @@
+@use "../libs/functions";
+
 ///
 /// Stellar by HTML5 UP
 /// html5up.net | @ajlkn
@@ -8,7 +10,7 @@
 
 	ol {
 		list-style: decimal;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 functions.size(element-margin) 0;
 		padding-left: 1.25em;
 
 		li {
@@ -18,7 +20,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 functions.size(element-margin) 0;
 		padding-left: 1em;
 
 		li {
@@ -42,16 +44,16 @@
 	}
 
 	dl {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 functions.size(element-margin) 0;
 
 		dt {
 			display: block;
-			font-weight: _font(weight-bold);
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			font-weight: functions.font(weight-bold);
+			margin: 0 0 (functions.size(element-margin) * 0.5) 0;
 		}
 
 		dd {
-			margin-left: _size(element-margin);
+			margin-left: functions.size(element-margin);
 		}
 
 		&.alt {
@@ -79,14 +81,14 @@
 		ul {
 			&.alt {
 				li {
-					border-top-color: _palette($p, border);
+					border-top-color: functions.palette($p, border);
 				}
 			}
 		}
 
 		dl {
 			dt {
-				color: _palette($p, fg-bold);
+				color: functions.palette($p, fg-bold);
 			}
 		}
 	}

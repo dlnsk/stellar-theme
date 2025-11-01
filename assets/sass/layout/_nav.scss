@@ -1,3 +1,8 @@
+@use "sass:color";
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/vendor";
+
 ///
 /// Stellar by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,20 +12,20 @@
 /* Nav */
 
 	#nav {
-		@include vendor('transition', (
-			'background-color #{_duration(transition)} ease',
-			'border-top-left-radius #{_duration(transition)} ease',
-			'border-top-right-radius #{_duration(transition)} ease',
-			'padding #{_duration(transition)} ease',
+		@include vendor.vendor('transition', (
+			'background-color #{functions.duration(transition)} ease',
+			'border-top-left-radius #{functions.duration(transition)} ease',
+			'border-top-right-radius #{functions.duration(transition)} ease',
+			'padding #{functions.duration(transition)} ease',
 		));
 		@include color-typography(invert);
 		position: absolute;
-		width: _size(inner);
-		max-width: calc(100% - #{_size(element-margin) * 2});
+		width: functions.size(inner);
+		max-width: calc(100% - #{functions.size(element-margin) * 2});
 		padding: 1em;
-		background-color: _palette(invert, bg-alt);
-		border-top-left-radius: _size(border-radius-main);
-		border-top-right-radius: _size(border-radius-main);
+		background-color: functions.palette(invert, bg-alt);
+		border-top-left-radius: functions.size(border-radius-main);
+		border-top-right-radius: functions.size(border-radius-main);
 		cursor: default;
 		text-align: center;
 
@@ -34,8 +39,8 @@
 			list-style: none;
 
 			li {
-				@include vendor('transition', (
-					'margin #{_duration(transition)} ease'
+				@include vendor.vendor('transition', (
+					'margin #{functions.duration(transition)} ease'
 				));
 				display: inline-block;
 				margin: 0 0.35em;
@@ -43,23 +48,23 @@
 				vertical-align: middle;
 
 				a {
-					@include vendor('transition', (
-						'font-size #{_duration(transition)} ease'
+					@include vendor.vendor('transition', (
+						'font-size #{functions.duration(transition)} ease'
 					));
 					display: inline-block;
 					height: 2.25em;
 					line-height: 2.25em;
 					padding: 0 1.25em;
 					border: 0;
-					border-radius: _size(border-radius);
+					border-radius: functions.size(border-radius);
 					box-shadow: inset 0 0 0 1px transparent;
 
 					&:hover {
-						background-color: _palette(invert, border-bg);
+						background-color: functions.palette(invert, border-bg);
 					}
 
 					&.active {
-						background-color: _palette(invert, bg);
+						background-color: functions.palette(invert, bg);
 						box-shadow: none;
 					}
 				}
@@ -70,10 +75,10 @@
 			position: fixed;
 			top: 0;
 			padding: 0.5em 1em;
-			background-color: transparentize(_palette(invert, bg-alt), 0.05);
+			background-color: color.adjust(functions.palette(invert, bg-alt), $alpha: -0.05);
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
-			z-index: _misc(z-index-base);
+			z-index: functions.misc(z-index-base);
 
 			ul {
 				li {
@@ -86,7 +91,7 @@
 			}
 		}
 
-		@include breakpoint('<=small') {
+		@include breakpoints.breakpoint('<=small') {
 			display: none;
 
 			& + #main {

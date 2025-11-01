@@ -1,3 +1,7 @@
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/vendor";
+
 ///
 /// Stellar by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,12 +11,12 @@
 /* Spotlight */
 
 	.spotlight {
-		@include vendor('display', 'flex');
-		@include vendor('align-items', 'center');
-		margin: 0 0 _size(element-margin) 0;
+		@include vendor.vendor('display', 'flex');
+		@include vendor.vendor('align-items', 'center');
+		margin: 0 0 functions.size(element-margin) 0;
 
 		.content {
-			@include vendor('flex', '1');
+			@include vendor.vendor('flex', '1');
 
 			> :last-child {
 				margin-bottom: 0;
@@ -20,7 +24,7 @@
 
 			header {
 				&.major {
-					margin: 0 0 _size(element-margin) 0;
+					margin: 0 0 functions.size(element-margin) 0;
 				}
 			}
 		}
@@ -39,12 +43,12 @@
 			}
 		}
 
-		@include breakpoint('<=medium') {
-			@include vendor('flex-direction', 'column-reverse');
+		@include breakpoints.breakpoint('<=medium') {
+			@include vendor.vendor('flex-direction', 'column-reverse');
 			text-align: center;
 
 			.content {
-				@include vendor('flex', '0 1 auto');
+				@include vendor.vendor('flex', '0 1 auto');
 				width: 100%;
 
 				header {
@@ -59,19 +63,19 @@
 				}
 
 				.actions {
-					@include vendor('justify-content', 'center');
-					width: calc(100% + #{_size(element-margin) * 0.5});
+					@include vendor.vendor('justify-content', 'center');
+					width: calc(100% + #{functions.size(element-margin) * 0.5});
 				}
 			}
 
 			.image {
-				@include vendor('flex', '0 1 auto');
+				@include vendor.vendor('flex', '0 1 auto');
 				margin-left: 0;
-				margin-bottom: _size(element-margin);
+				margin-bottom: functions.size(element-margin);
 			}
 		}
 
-		@include breakpoint('<=small') {
+		@include breakpoints.breakpoint('<=small') {
 			.image {
 				padding: 0.35em;
 
@@ -85,7 +89,7 @@
 	@mixin color-spotlight($p: null) {
 		.spotlight {
 			.image {
-				border-color: _palette($p, border);
+				border-color: functions.palette($p, border);
 			}
 		}
 	}

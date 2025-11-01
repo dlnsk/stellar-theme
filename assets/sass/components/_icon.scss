@@ -1,3 +1,8 @@
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/vendor";
+
 ///
 /// Stellar by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,10 +12,10 @@
 /* Icon */
 
 	.icon {
-		@include icon;
-		@include vendor('transition', (
-			'background-color #{_duration(transition)} ease-in-out',
-			'color #{_duration(transition)} ease-in-out'
+		@include mixins.icon;
+		@include vendor.vendor('transition', (
+			'background-color #{functions.duration(transition)} ease-in-out',
+			'color #{functions.duration(transition)} ease-in-out'
 		));
 		border-bottom: none;
 		position: relative;
@@ -40,7 +45,7 @@
 			display: inline-block;
 			border-radius: 100%;
 			padding: 0.65em;
-			margin: 0 0 _size(element-margin) 0;
+			margin: 0 0 functions.size(element-margin) 0;
 			cursor: default;
 
 			&:before {
@@ -71,26 +76,26 @@
 		}
 
 		&.style1 {
-			color: _palette(accent1);
+			color: functions.palette(accent1);
 		}
 
 		&.style2 {
-			color: _palette(accent2);
+			color: functions.palette(accent2);
 		}
 
 		&.style3 {
-			color: _palette(accent3);
+			color: functions.palette(accent3);
 		}
 
 		&.style4 {
-			color: _palette(accent4);
+			color: functions.palette(accent4);
 		}
 
 		&.style5 {
-			color: _palette(accent5);
+			color: functions.palette(accent5);
 		}
 
-		@include breakpoint('<=xlarge') {
+		@include breakpoints.breakpoint('<=xlarge') {
 			&.major {
 				&:before {
 					font-size: 5.5rem;
@@ -98,7 +103,7 @@
 			}
 		}
 
-		@include breakpoint('<=large') {
+		@include breakpoints.breakpoint('<=large') {
 			&.major {
 				&:before {
 					font-size: 4.75rem;
@@ -106,9 +111,9 @@
 			}
 		}
 
-		@include breakpoint('<=small') {
+		@include breakpoints.breakpoint('<=small') {
 			&.major {
-				margin: 0 0 (_size(element-margin) * 0.75) 0;
+				margin: 0 0 (functions.size(element-margin) * 0.75) 0;
 				padding: 0.35em;
 
 				&:before {
@@ -121,23 +126,23 @@
 	@mixin color-icon($p: null) {
 		.icon {
 			&.major {
-				border-color: _palette($p, border);
+				border-color: functions.palette($p, border);
 
 				&:before {
-					border-color: _palette($p, border);
+					border-color: functions.palette($p, border);
 				}
 			}
 
 			&.alt {
- 				border-color: _palette($p, border);
- 				color: _palette($p, fg-bold);
+ 				border-color: functions.palette($p, border);
+ 				color: functions.palette($p, fg-bold);
 
 				&:hover {
-					background-color: _palette($p, border-bg);
+					background-color: functions.palette($p, border-bg);
 				}
 
 				&:active {
-					background-color: _palette($p, border2-bg);
+					background-color: functions.palette($p, border2-bg);
 				}
  			}
 		}
