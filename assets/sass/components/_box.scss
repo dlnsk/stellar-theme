@@ -1,3 +1,4 @@
+@use "../libs/colors";
 @use "../libs/functions";
 
 ///
@@ -27,10 +28,4 @@
 		}
 	}
 
-	@mixin color-box($p: null) {
- 		.box {
- 			border-color: functions.palette($p, border);
- 		}
-	}
-
-	@include color-box;
+	@include colors.color-box;

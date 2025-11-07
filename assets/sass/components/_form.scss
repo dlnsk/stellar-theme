@@ -1,4 +1,4 @@
-@use "../libs/color-elem";
+@use "../libs/colors";
 @use "../libs/functions";
 @use "../libs/mixins";
 @use "../libs/vendor";
@@ -147,4 +147,4 @@
 		opacity: 1.0;
 	}
 
-	@include color-elem.color-form;
+	@include colors.color-form;

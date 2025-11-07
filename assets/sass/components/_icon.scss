@@ -1,4 +1,5 @@
 @use "../libs/breakpoints";
+@use "../libs/colors";
 @use "../libs/functions";
 @use "../libs/mixins";
 @use "../libs/vendor";
@@ -123,29 +124,4 @@
 		}
 	}
 
-	@mixin color-icon($p: null) {
-		.icon {
-			&.major {
-				border-color: functions.palette($p, border);
-
-				&:before {
-					border-color: functions.palette($p, border);
-				}
-			}
-
-			&.alt {
- 				border-color: functions.palette($p, border);
- 				color: functions.palette($p, fg-bold);
-
-				&:hover {
-					background-color: functions.palette($p, border-bg);
-				}
-
-				&:active {
-					background-color: functions.palette($p, border2-bg);
-				}
- 			}
-		}
-	}
-
-	@include color-icon;
+	@include colors.color-icon;

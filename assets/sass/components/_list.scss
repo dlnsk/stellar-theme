@@ -1,3 +1,4 @@
+@use "../libs/colors";
 @use "../libs/functions";
 
 ///
@@ -77,20 +78,4 @@
 		}
 	}
 
-	@mixin color-list($p: null) {
-		ul {
-			&.alt {
-				li {
-					border-top-color: functions.palette($p, border);
-				}
-			}
-		}
-
-		dl {
-			dt {
-				color: functions.palette($p, fg-bold);
-			}
-		}
-	}
-
-	@include color-list;
+	@include colors.color-list;

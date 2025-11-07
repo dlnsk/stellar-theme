@@ -1,5 +1,5 @@
 @use "../libs/breakpoints";
-@use "../libs/color-elem";
+@use "../libs/colors";
 @use "../libs/functions";
 @use "../libs/vendor";
 
@@ -180,4 +180,4 @@
 		text-align: right;
 	}
 
-	@include color-elem.color-typography;
+	@include colors.color-typography;

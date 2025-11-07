@@ -1,4 +1,5 @@
 @use "../libs/breakpoints";
+@use "../libs/colors";
 @use "../libs/functions";
 @use "../libs/vendor";
 
@@ -86,12 +87,4 @@
 		}
 	}
 
-	@mixin color-spotlight($p: null) {
-		.spotlight {
-			.image {
-				border-color: functions.palette($p, border);
-			}
-		}
-	}
-
-	@include color-spotlight;
+	@include colors.color-spotlight;

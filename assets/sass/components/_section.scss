@@ -1,4 +1,5 @@
 @use "../libs/breakpoints";
+@use "../libs/colors";
 @use "../libs/functions";
 @use "../libs/vendor";
 
@@ -89,20 +90,4 @@
 		}
 	}
 
-	@mixin color-section($p: null) {
-		header {
-			&.major {
-				h2 {
-					&:after {
-						background-color: functions.palette($p, border);
-
-						@if $p == 'invert' {
-							@include vendor.vendor('background-image', 'linear-gradient(90deg, #{functions.palette(accent1)}, #{functions.palette(accent3)}, #{functions.palette(accent5)})');
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@include color-section;
+	@include colors.color-section;

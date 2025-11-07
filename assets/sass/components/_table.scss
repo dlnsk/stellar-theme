@@ -1,3 +1,4 @@
+@use "../libs/colors";
 @use "../libs/functions";
 
 ///
@@ -77,40 +78,4 @@
 		}
 	}
 
-	@mixin color-table($p: null) {
-		table {
-			tbody {
-				tr {
-					border-color: functions.palette($p, border);
-
-					&:nth-child(2n + 1) {
-						background-color: functions.palette($p, border-bg);
-					}
-				}
-			}
-
-			th {
-				color: functions.palette($p, fg-bold);
-			}
-
-			thead {
-				border-bottom-color: functions.palette($p, border);
-			}
-
-			tfoot {
-				border-top-color: functions.palette($p, border);
-			}
-
-			&.alt {
-				tbody {
-					tr {
-						td {
-							border-color: functions.palette($p, border);
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@include color-table;
+	@include colors.color-table;
