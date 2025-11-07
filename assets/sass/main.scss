@@ -1,17 +1,5 @@
 @use "sass:meta";
-@use 'libs/vars';
-@use 'libs/functions';
-@use 'libs/mixins';
-@use 'libs/vendor';
 @use 'libs/breakpoints';
-@use 'libs/html-grid';
-@use "components/box";
-@use "components/button";
-@use "components/icon";
-@use "components/list";
-@use "components/section";
-@use "components/spotlight";
-@use "components/table";
 
 @import 'fontawesome-all.min.css';
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
